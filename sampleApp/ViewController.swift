@@ -9,6 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var stopButtom: UIBarButtonItem!
+    @IBOutlet weak var reloadButton: UIBarButtonItem!
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var webView: UIWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

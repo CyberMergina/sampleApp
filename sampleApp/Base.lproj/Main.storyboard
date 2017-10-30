@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="sampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +20,66 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTN-9M-a9l">
+                                <rect key="frame" x="0.0" y="20" width="375" height="64"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-Yt-5Jj">
+                                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="E5R-tt-Nt2"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="bgi-Yt-5Jj" firstAttribute="top" secondItem="bTN-9M-a9l" secondAttribute="top" constant="20" id="8V9-iA-8vh"/>
+                                    <constraint firstAttribute="bottom" secondItem="bgi-Yt-5Jj" secondAttribute="bottom" id="Us9-m5-ifJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="bgi-Yt-5Jj" secondAttribute="trailing" id="bfw-Wg-5ea"/>
+                                    <constraint firstAttribute="height" constant="64" id="yD7-ll-1qf"/>
+                                    <constraint firstItem="bgi-Yt-5Jj" firstAttribute="leading" secondItem="bTN-9M-a9l" secondAttribute="leading" id="zNg-Zu-Pkg"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r81-5h-1Wv">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8Yt-ey-m9H"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Item" id="OOs-6R-hwn"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="lE6-MK-pne"/>
+                                    <barButtonItem title="Item" id="I3R-G9-eGK"/>
+                                    <barButtonItem title="Item" id="CRb-iT-nD8"/>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O1-5s-Joj">
+                                <rect key="frame" x="0.0" y="84" width="375" height="539"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6O1-5s-Joj" secondAttribute="trailing" id="0eR-jL-nQD"/>
+                            <constraint firstItem="r81-5h-1Wv" firstAttribute="top" secondItem="6O1-5s-Joj" secondAttribute="bottom" id="2FR-hK-2h7"/>
+                            <constraint firstItem="r81-5h-1Wv" firstAttribute="leading" secondItem="bTN-9M-a9l" secondAttribute="leading" id="A5D-KS-NoL"/>
+                            <constraint firstItem="r81-5h-1Wv" firstAttribute="trailing" secondItem="bTN-9M-a9l" secondAttribute="trailing" id="C4X-6X-0im"/>
+                            <constraint firstItem="6O1-5s-Joj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Edq-fk-F94"/>
+                            <constraint firstAttribute="trailing" secondItem="bTN-9M-a9l" secondAttribute="trailing" id="K3C-Ly-Aqo"/>
+                            <constraint firstItem="bTN-9M-a9l" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MXN-80-85O"/>
+                            <constraint firstItem="6O1-5s-Joj" firstAttribute="top" secondItem="bTN-9M-a9l" secondAttribute="bottom" id="c1j-XR-Kkb"/>
+                            <constraint firstItem="bTN-9M-a9l" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rcf-fp-62P"/>
+                            <constraint firstItem="r81-5h-1Wv" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="uEQ-IT-Xpm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="OOs-6R-hwn" id="Sck-Dw-Bi5"/>
+                        <outlet property="reloadButton" destination="I3R-G9-eGK" id="If9-YP-tAe"/>
+                        <outlet property="searchBar" destination="bgi-Yt-5Jj" id="dmK-Ke-II8"/>
+                        <outlet property="stopButton" destination="CRb-iT-nD8" id="vFA-Uz-xHW"/>
+                        <outlet property="stopButtpm" destination="CRb-iT-nD8" id="msG-mE-sId"/>
+                        <outlet property="webView" destination="6O1-5s-Joj" id="kjg-Wx-sVQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
