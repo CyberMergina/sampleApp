@@ -47,10 +47,22 @@
                                     <constraint firstAttribute="height" constant="44" id="8Yt-ey-m9H"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="OOs-6R-hwn"/>
+                                    <barButtonItem title="Item" id="OOs-6R-hwn">
+                                        <connections>
+                                            <action selector="backButtonTapped:" destination="BYZ-38-t0r" id="jTY-UL-dvu"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="lE6-MK-pne"/>
-                                    <barButtonItem title="Item" id="I3R-G9-eGK"/>
-                                    <barButtonItem title="Item" id="CRb-iT-nD8"/>
+                                    <barButtonItem title="Item" id="I3R-G9-eGK">
+                                        <connections>
+                                            <action selector="reloadButtonTapped:" destination="BYZ-38-t0r" id="vRz-e1-b0p"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" id="CRb-iT-nD8">
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" id="gW3-B2-mYP"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6O1-5s-Joj">
@@ -76,8 +88,7 @@
                         <outlet property="backButton" destination="OOs-6R-hwn" id="Sck-Dw-Bi5"/>
                         <outlet property="reloadButton" destination="I3R-G9-eGK" id="If9-YP-tAe"/>
                         <outlet property="searchBar" destination="bgi-Yt-5Jj" id="dmK-Ke-II8"/>
-                        <outlet property="stopButton" destination="CRb-iT-nD8" id="vFA-Uz-xHW"/>
-                        <outlet property="stopButtpm" destination="CRb-iT-nD8" id="msG-mE-sId"/>
+                        <outlet property="stopButton" destination="CRb-iT-nD8" id="i3L-93-vmu"/>
                         <outlet property="webView" destination="6O1-5s-Joj" id="kjg-Wx-sVQ"/>
                     </connections>
                 </viewController>
