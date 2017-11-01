@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIWebViewDelegate {
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var stopButton: UIBarButtonItem!
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -36,7 +37,28 @@ class ViewController: UIViewController {
         let urlRequest = URLRequest(url: url!)
         webView.loadRequest(urlRequest)
     }
+    
+    // MARK: - UIWebViewDelegate
 
+    // ページの読み込み開始時の処理
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.alpha = 1 // ローディングイメージを表示
+        activityIndicator.startAnimating() // ローディングイメージのアニメーション開始
+        backButton.isEnabled = false // バックボタンの非アクティブ化
+        reloadButton.isEnabled = false // リロードボタンの非アクティブ化
+        stopButton.isEnabled = true // ストップボタンのアクティブ化
+    }
+    
+    // ページの読み込み終了時の処理
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.alpha = 0 // ローディングイメージを非表示
+        activityIndicator.stopAnimating() // ローディングイメージのアニメーション停止
+        backButton.isEnabled = true // バックボタンのアクティブ化
+        reloadButton.isEnabled = true // リロードボタンのアクティブ化
+        stopButton.isEnabled = false // ストップボタンの非アクティブ化
+    }
+    
+    // MARK: - IMAction
     @IBAction func backButtonTapped(_ sender: UIBarButtonItem) {
         webView.goBack()
     }
